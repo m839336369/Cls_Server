@@ -1,0 +1,34 @@
+!!python/object:entity.server.Server
+description: 图像多分类系统
+diskConfig: !!python/object:configuration.disk.DiskConfig
+  root: ./data/
+fastapiConfig: !!python/object:configuration.fastapi.FastApiConfig
+  anonymousPathConfig: !!python/object:configuration.anonymous.AnonymousPathConfig
+    anonymous_path_list:
+    - GET/
+    - GET/robots.txt
+    - GET/favicon.ico
+    - GET/docs
+    - GET/docs/oauth2-redirect
+    - GET/redoc
+    - GET/openapi.json
+    - GET/sys_info
+  debug: true
+  description: 四诊合参:基于望闻问切四诊表征，计算四诊合参结果。
+  docs_url: /docs
+  openapi_prefix: ''
+  openapi_url: /openapi.json
+  redoc_url: /redoc
+  request_log_to_mongo: true
+  res_path: ./res
+  swagger_ui_init_oauth: null
+  swagger_ui_oauth2_redirect_url: /docs/oauth2-redirect
+  title: 中医四诊仪四诊合参服务
+  version: 0.0.1.20240427
+id: 0bf0ec30-3df5-4e51-b8dc-0a532d9da958
+name: 图像多分类系统
+sqlUrl: mysql+pymysql://root:woainiq1@127.0.0.1:3306/tcm
+type: 图像多分类服务器
+uvicornConfig: !!python/object:configuration.uvicorn.UvicornConfig
+  host: 127.0.0.1
+  port: 8081
